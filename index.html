@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DIGITAL PORTRAIT // SURVEILLANCE ENGINE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!--top hud-->
+  <div id="hud-top">
+    <span class="title"> [SURVEILLANCE ENGINE v2.4.1] </span>
+    <span class="status">▶ FEED ACTIVE — PROFILING</span>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+
+  <!-- MAIN -->
+  <div id="main">
+
+    <!-- canvas -->
+    <div id="canvas-wrap">
+      <div id="acquiring">
+        <div class="big">[ INITIATING CAPTURE ]</div>
+        <div>REQUESTING CAMERA ACCESS...</div>
+        <div class="blink">▮</div>
+        <div style="font-size:13px;color:#004010;max-width:300px;line-height:1.5;">
+          YOUR LIKENESS WILL BE CONVERTED TO DATA.<br/>ALLOW CAMERA TO PROCEED.
+        </div>
+      </div>
+      <div id="density-label">DENSITY: <span id="density-percentage">0%</span></div>
+    </div>
+
+    <!-- side panel -->
+    <div id="panel">
+
+      <!-- Input -->
+      <div class="panel-section">
+        <div class="panel-label">▸ DATA INTAKE // TYPE TO REVEAL</div>
+        <textarea id="data-input"
+          placeholder="age, location, email, last purchase, websites visited, preferences, phone number, browsing history..." spellcheck="false"></textarea>
+      </div>
+
+      <!-- Density -->
+      <div class="panel-section">
+        <div class="panel-label">▸ PORTRAIT DENSITY</div>
+        <div id="density-bar-wrap">
+          <div id="density-bar-bg"><div id="density-bar-fill"></div></div>
+          <div id="density-val">0%</div>
+        </div>
+      </div>
+
+      <!-- Style controls -->
+      <div class="panel-section">
+        <div class="panel-label">▸ RENDER STYLE</div>
+        <div class="ctrl-row">
+          <label>FONT SIZE</label>
+          <input type="range" id="controlSize" min="4" max="18" value="9" step="1">
+          <span class="ctrl-val" id="val-size">9</span>
+        </div>
+        <div class="ctrl-row">
+          <label>GLOW</label>
+          <input type="range" id="controlGlow" min="0" max="20" value="6" step="1">
+          <span class="ctrl-val" id="val-glow">6</span>
+        </div>
+      </div>
+
+      <!-- Exposure meters -->
+      <div class="panel-section">
+        <div class="panel-label">▸ EXPOSURE INDEX</div>
+        <div id="exposure-wrap"></div>
+      </div>
+
+      <!-- Data log -->
+      <div class="panel-label" style="padding:8px 14px 2px; font-size:13px;">▸ TRANSMITTED DATA LOG</div>
+      <div id="data-log"></div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM HUD -->
+  <div id="hud-bot">
+    <span>SYS: LIVE CAPTURE // ASCII ENCODE // MONETISE</span>
+    <span class="warning" id="warn-text"> [!!] DATA COLLECTION IN PROGRESS</span>
+  </div>
+</div>
+
+<!-- p5.js+ p5.sound -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+
+<script src="sketch.js"></script>
+</body>
+</html>
